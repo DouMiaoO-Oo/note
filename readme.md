@@ -1,0 +1,1 @@
+This repository consists some notes directory that I update frequently.
