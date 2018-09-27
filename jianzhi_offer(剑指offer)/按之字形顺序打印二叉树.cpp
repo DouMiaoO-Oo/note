@@ -28,7 +28,7 @@ public:
         res.push_back(vector<int>());
         int next_cnt = 0;
         bool odd = true;
-        int id = 0; // id of res
+        int id = 0; // level of res
         while(!s.empty()){
             p = s.top();
             s.pop();
