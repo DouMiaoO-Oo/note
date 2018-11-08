@@ -48,6 +48,33 @@ vector<int> GetLeastNumbers_Solution(vector<int> input, int k)
     quick_sort(input, 0, input.size()-1, k);
     return vector<int>(&input[0], &input[k]);
 }
+/*
+class Solution {
+public:
+    int part(vector<int>& a, int l, int r){
+        int p = l; // pivot position
+        for(int i = l+1; i <= r; ++i){
+            if(a[l] >= a[i])
+                swap(a[++p], a[i]);
+        } swap(a[l], a[p]);
+        return p;
+    }
+    void helper(vector<int>& arr, int l, int r, int k){
+        if(l < r){
+            int pivot = part(arr, l, r);
+            if(pivot == k-1) return;
+            helper(arr, l, pivot-1, k);
+            helper(arr, pivot+1, r, k);
+        } return;
+    }
+    vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
+        if(k <= 0 || input.size() < k) return vector<int>();
+        helper(input, 0, input.size()-1, k);
+        return vector<int>(&input[0], &input[k]);
+    }
+};
+*/
+
 int main()
 {
     int a[] = {4, 5, 1, 6, 2, 7, 3, 8};

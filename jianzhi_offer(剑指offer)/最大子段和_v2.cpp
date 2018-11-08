@@ -7,7 +7,7 @@ using namespace std;
         int res = a[0];
         int sum = a[0];
         for(int i = 1; i < n; ++i){
-            sum = max(sum + a[i], a[i]);
+            sum = max(sum + a[i], a[i]); // 判断的就是当前的sum是否>0
             if(sum > res){
                 res = sum;
             }
