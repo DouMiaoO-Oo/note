@@ -34,6 +34,22 @@ public:
         return helper(root, 0) != -1;
     }
 };
+/*
+class Balance {
+public:
+    int helper(TreeNode* root, int d){
+        if(root == NULL) return d;
+        int left_val = helper(root->left, d+1);
+        if(left_val == -1) return -1;
+        int right_val = helper(root->right, d+1);
+        if(right_val == -1 || abs(right_val-left_val) > 1) return -1;
+        return max(left_val, right_val);
+    }
+    bool isBalance(TreeNode* root) {
+        return helper(root, 0) != -1;
+    }
+};
+*/
 int main(){
 
     return 0;
