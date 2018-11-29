@@ -25,6 +25,22 @@ public:
         return combination(x+y-2, x-1);
     }
 };
+
+/* // 方法二 动态规划
+class Robot {
+public:
+    int countWays(int x, int y) {
+        vector<vector<int> > cnt(x, vector<int>(y));
+        for(int i = 0; i < x; ++i) cnt[i][0] = 1;
+        for(int j = 0; j < y; ++j) cnt[0][j] = 1;
+        for(int i = 1; i < x; ++i){
+            for(int j = 1; j < y; ++j){
+                cnt[i][j] = cnt[i-1][j] + cnt[i][j-1];
+            }
+        } return cnt[x-1][y-1];
+    }
+};
+*/
 int main(){
 
     return 0;

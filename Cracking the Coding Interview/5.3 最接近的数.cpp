@@ -87,6 +87,11 @@ public:
         return res;
     }
 };
+/*
+补充一个更好的方法：
+	000111111 = 001000000 - 1
+	111110000 = (~0) << 4
+*/
 int main(){
     CloseNumber closeNumber;
     cout << closeNumber.getLarger(2) << endl;  // 00010
