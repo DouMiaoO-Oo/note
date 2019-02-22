@@ -47,7 +47,7 @@ public:
 	int minNumberInRotateArray(vector<int> v) {
         if(v.empty()) return 0;  // 给出的所有元素都大于0，若数组大小为0，请返回0。
         int l = 0, r = v.size()-1;
-        if(v[l] < v[r]) return v[l]; // 补丁
+        if(v[l] < v[r]) return v[l]; // 补丁，旋转过的数组与原来的数组一样
         while(l+1 < r){
             int mid = (l+r)/2;
             if(v[l] == v[mid] && v[mid] == v[r]){
@@ -60,7 +60,7 @@ public:
             }
             if(v[l] > v[mid]){
                 r = mid;
-            } else{ // if(v[l] <= v[mid]){
+            } else{ // if(v[l] <= v[mid]){ // 这里的分析很重要。v[l] < v[mid]时，容易分析。当v[l] == v[mid]时，因为v[mid]与v[r]不相等，因此一定满足v[mid]>v[r]
                 l = mid;
             } 
             

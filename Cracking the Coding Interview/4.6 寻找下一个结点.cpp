@@ -17,6 +17,7 @@ struct TreeNode {
             val(x), left(NULL), right(NULL) {
     }
 };
+/* 2018.10*/
 class Successor {  /* 这份代码可以通过 */
 public:
     int helper(TreeNode* root, int p, bool &find){
@@ -32,7 +33,7 @@ public:
         return helper(root, p, find);
     }
 };
-/*
+/*  // 2018.10
 class Successor {  // 思路类似，是判断上一个访问的节点是不是p
 public:
     void helper(TreeNode* root, int p, int& pre, int& ans){
@@ -56,6 +57,34 @@ public:
         helper(root, p, pre, ans);
         return ans;
     }
+};
+*/
+
+/*
+// 2019.2.19
+class Successor {
+public:
+    void helper(TreeNode* cur, TreeNode*& pre, int p){
+        if(cur == NULL || res != -1) return;
+        helper(cur->left, pre, p);
+        if(res != -1) return;  // 容易遗漏
+        if(pre != NULL && pre->val == p){
+            res = cur->val;
+            return;
+        }
+        pre = cur;
+        helper(cur->right, pre, p);
+        
+    }
+    int findSucc(TreeNode* root, int p) {
+        if(root == NULL) return -1;
+        TreeNode* pre = NULL;
+        res = -1;
+        helper(root, pre, p);
+        return res;
+    }
+private:
+    int res;
 };
 */
 int main(){

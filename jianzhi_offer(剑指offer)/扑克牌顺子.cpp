@@ -3,6 +3,11 @@
 #include <algorithm>
 #include <string>
 
+/*
+1. 5张牌
+2. max-min < 5
+3. 除0之外，没有重复数字
+*/
 using namespace std;
 class Solution {
 public:

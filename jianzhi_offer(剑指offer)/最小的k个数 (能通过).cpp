@@ -22,7 +22,7 @@ int partition(vector<int>& a, int l, int r)
 }
 void quick_sort(vector<int>& a, int l, int r, int k)
 {
-    if(a.size() > 1)
+    if(a.size() > 1)  // 这里最好修改 l < r
     {
         int pivot = partition(a, l, r);
         if(pivot == k-1)
@@ -49,6 +49,7 @@ vector<int> GetLeastNumbers_Solution(vector<int> input, int k)
     return vector<int>(&input[0], &input[k]);
 }
 /*
+// 方法二，part函数有所不同
 class Solution {
 public:
     int part(vector<int>& a, int l, int r){

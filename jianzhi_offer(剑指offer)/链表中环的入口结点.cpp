@@ -32,9 +32,9 @@ public:
                     break;
                 }
             }
-        } if(!exist) return NULL;
+        } if(!exist) return NULL;  // 如果f == NULL 也说明不存在环
         s = pHead;  //  slow 指针从head开始走了1步
-        f = f->next;
+        f = f->next;  // 容易遗漏
         while(s != f){
             s = s->next;
             f = f->next;

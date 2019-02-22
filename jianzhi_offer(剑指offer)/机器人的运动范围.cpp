@@ -4,7 +4,7 @@
 #include <string>
 #include <queue>
 using namespace std;
-struct Node{
+struct Node{  // 可以用pair<int, int>
   int r, c;
   Node(int x, int y): r(x), c(y){}
 };

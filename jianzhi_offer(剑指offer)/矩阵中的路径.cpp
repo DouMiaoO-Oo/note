@@ -7,6 +7,7 @@
 #include <sstream>
 using namespace std;
 /*
+2018.8.31
 a b c
 d e f
 g h i
@@ -59,6 +60,81 @@ public:
         } return exist;
     }
 };
+/*
+2019.2.20 惭愧，上面提到的问题这次做又出现了...
+用例:
+"AAAAAAAAAAAA",3,4,"AAAAAAAAAAAA"
+
+对应输出应该为:
+true
+
+class Solution {
+public:
+    bool hasPath(char* mat, int m, int n, char* str)
+    {
+        if(mat == NULL || *mat == '\0' 
+           || m <= 0 || n <= 0 
+           || str == NULL || *str == '\0') return false;
+        pos_cnt = m*n;
+        int dir_arr[] = {-1, 1, -n, n};
+        dir = vector<int>(dir_arr, dir_arr+4);
+        visited = vector<bool>(pos_cnt, false);
+        for(int i = 0; i < pos_cnt; ++i){
+            if(helper(i, mat, m, n, str)) return true;
+        } return false;
+    }
+private:
+    int pos_cnt;
+    vector<int> dir;
+    vector<bool> visited;
+    bool helper(int pos, char* mat, int m, int n, char* str){
+        if(*str == '\0') return true;
+        if(mat[pos] != *str) return false;
+        visited[pos] = true;
+        for(int i = 0; i < 4; ++i){
+            int new_pos = pos + dir[i];
+            if(new_pos < 0 || new_pos >= pos_cnt || visited[new_pos]) continue;
+            if(helper(new_pos, mat, m, n, str+1)) return true;
+        } visited[pos] = false;
+        return false;
+    }
+
+};
+
+// 改正为：
+
+class Solution {
+public:
+    bool hasPath(char* mat, int m, int n, char* str)
+    {
+        if(mat == NULL || *mat == '\0' 
+           || m <= 0 || n <= 0 
+           || str == NULL || *str == '\0') return false;
+        pos_cnt = m*n;
+        int dir_arr[] = {-1, 1, -n, n};
+        dir = vector<int>(dir_arr, dir_arr+4);
+        visited = vector<bool>(pos_cnt, false);
+        for(int i = 0; i < pos_cnt; ++i){
+            if(helper(i, mat, str)) return true;
+        } return false;
+    }
+private:
+    int pos_cnt;
+    vector<int> dir;
+    vector<bool> visited;
+    bool helper(int pos, char* mat, char* str){
+        if(*str == '\0') return true;
+        if(pos < 0 || pos >= pos_cnt || visited[pos]) return false;
+        if(mat[pos] != *str) return false;
+        visited[pos] = true;
+        for(int i = 0; i < 4; ++i){
+            if(helper(pos+dir[i], mat, str+1)) return true;
+        } visited[pos] = false;
+        return false;
+    }
+
+};
+*/
 int main(){
 
     return 0;

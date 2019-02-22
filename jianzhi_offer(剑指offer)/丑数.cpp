@@ -9,7 +9,7 @@ int GetUglyNumber_Solution(int index) {
         v[0] = 1;
         v[1] = 2;
         v[2] = 3;
-        v[3] = 4;
+        v[3] = 4;  // 容易遗漏
         v[4] = 5;
         int id = 4;  // index of the last ugly number
         int i2 = 0, i3 = 0, i5 = 0;

@@ -6,6 +6,7 @@
 using namespace std;
 class Solution {
 public:
+//2018.8.24通过
     void my_reverse(string& str, int s, int e){
         while(s < e){
             swap(str[s++], str[e--]);
@@ -27,6 +28,20 @@ public:
         return str;
     }
 };
+// 2019.2.18通过
+
+string ReverseSentence(string str) {
+        if(str.size() <= 1) return str;
+        int l = 0, r = 0;
+        for(int i = 0; i < str.size(); ++i){
+            if(str[i] == ' ') {
+                my_reverse(str, l, i-1);
+                l = i+1;
+            } 
+        } if(l < str.size()) my_reverse(str, l, str.size()-1);
+        my_reverse(str, 0, str.size()-1);
+        return str;
+    }
 int main(){
 	cout << Solution().ReverseSentence("student. a am I") << endl;
     return 0;

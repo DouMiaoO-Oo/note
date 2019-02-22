@@ -31,6 +31,28 @@ public:
 
     
 };
+/*
+2019.2.19 下面这样应该也行
+class Solution {
+public:
+    TreeNode* helper(TreeNode* r, int k){
+        if(r == NULL) return NULL;
+        TreeNode* node = NULL;
+        node = helper(r->left, k);
+        if(node != NULL) return node;
+        if(++cnt == k)
+            return r;
+        return helper(r->right, k);   // 直接返回右节点
+    }
+    TreeNode* KthNode(TreeNode* pRoot, int k){
+        cnt = 0;
+        if(pRoot == NULL || k == 0) return NULL;
+        return helper(pRoot, k);
+    }
+private:
+    int cnt;
+};
+*/
 int main(){
 
     return 0;

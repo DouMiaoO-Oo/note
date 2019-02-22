@@ -12,9 +12,8 @@ int StrToInt(string str) {
         sign = -1;
         ++left;
     }else if(str[0] == '+'){
-            ++left;
-        }
-    bool valid = true;
+        ++left;
+    }
     int res = 0;
     for(int i = left; i<str.size(); ++i){
         if(str[i] < '0' || str[i] > '9'){

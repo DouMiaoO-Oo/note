@@ -18,47 +18,37 @@ struct RandomListNode {
 };
 
 
-RandomListNode* Clone(RandomListNode* pHead){
-    if(pHead == NULL) return pHead;
-    RandomListNode* h = new RandomListNode(pHead->label);
-    RandomListNode* p1 = pHead->next;
-    RandomListNode* p2 = NULL;
-    h->next = pHead->next;
-    //h->random = pHead->random;
-    pHead->next = h;
-    while(p1 != NULL){
-        p2 = new RandomListNode(p1->label);
-        p2->next = p1->next;
-        //p2->random = p1->random;
-        p1->next = p2;
-        p1 = p2->next;
+class Solution {
+public:
+    RandomListNode* Clone(RandomListNode* head){
+        if(head == NULL) return NULL;
+        RandomListNode dummy(-1), *p1 = head, *p2, *pt;
+        // 假设通过next可以遍历完所有node
+        while(p1 != NULL){  // old->new
+            p2 = new RandomListNode(p1->label);
+            p2->next = p1->next;
+            p1->next = p2;
+            p1 = p2->next;
+        } p1 = head;
+        while(p1 != NULL){
+            p2 = p1->next;
+            if(p1->random != NULL){  // random可能为NULL
+                p2->random = p1->random->next;
+            } else p2->random = NULL;
+            p1 = p2->next;
+        } p1 = head;
+        dummy.next = head->next;
+        while(p1->next->next != NULL){
+            p2 = p1->next;
+            pt = p2->next; // next old node
+            p1->next = pt;
+            p2->next = p2->next->next;
+            p1= pt;
+        }  // assert p1 is the last non-null node
+        p1->next = NULL;
+        return dummy.next;
     }
-    // step2
-    p1 = pHead;
-    while(p1 != NULL){
-        p2 = p1->next;
-        if(p1->random != NULL){  // 这里可能为NULL
-            p2->random = p1->random->next;
-        } else{
-            p2->random = NULL;
-        }
-        p1 = p2->next;
-    }
-    // step3
-    p1 = pHead;
-    while(p1 != NULL){
-        p2 = p1->next;
-        RandomListNode* p1_next = p2->next;
-        if(p1_next != NULL){   // 这里可能为NULL
-            p2->next = p1_next->next;
-        } else{
-            p2->next = NULL;
-        }
-        p1->next = p1_next;
-        p1 = p1_next;
-    }
-    return h;
-}
+};
 
 
 int main(){

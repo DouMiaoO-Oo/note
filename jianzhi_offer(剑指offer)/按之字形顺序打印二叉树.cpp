@@ -20,39 +20,37 @@ public:
     vector<vector<int> > Print(TreeNode* pRoot) {
         vector<vector<int> > res;
         if(pRoot == NULL) return res;
+        vector<int> cur;
+        //queue<TreeNode*> q;
         stack<TreeNode*> s;
-        stack<TreeNode*> next_s;
+        stack<TreeNode*> sn;  // stack for next level 容易遗漏
         s.push(pRoot);
-        TreeNode *p, *l, *r = NULL;
-        int cur_cnt = 1;
-        res.push_back(vector<int>());
-        int next_cnt = 0;
+        int cnt = 1, next_cnt = 0;
         bool odd = true;
-        int id = 0; // level of res
         while(!s.empty()){
-            p = s.top();
+            TreeNode* r = s.top();
             s.pop();
-            (res[id]).push_back(p->val);
-            l = p->left;
-            r = p->right;
-            if(!odd) swap(l, r);
-            if(l){
-                next_s.push(l);
+            cur.push_back(r->val);
+            TreeNode* left = r->left, *right = r->right;
+            if(!odd) swap(left, right);
+            if(left != NULL){
+                sn.push(left);
                 ++next_cnt;
-            } if(r){
-                next_s.push(r);
+            }
+            if(right != NULL){
+                sn.push(right);
                 ++next_cnt;
-            } if(--cur_cnt == 0 && next_cnt != 0){
-                cur_cnt = next_cnt;
-                swap(s, next_s);
+            }
+            if(--cnt == 0){
+                cnt = next_cnt;
                 next_cnt = 0;
                 odd = !odd;
-                res.push_back(vector<int>());
-                ++id;
+                res.push_back(cur);
+                cur = vector<int>();
+                swap(s, sn);  // 这一步如果嫌效率低，可以通过指针来操作
             }
         } return res;
     }
-    
 };
 int main(){
 

@@ -46,6 +46,33 @@ public:
 private:
     int cnt;
 };
+
+/*
+方法二： 迭代法
+unsigned long long merge_sort(vector<int>& arr){
+    unsigned long long  cnt = 0;
+    int n = arr.size();
+    if(n <= 1) return 0;
+    vector<int> tmp(n);
+    int ls, le, rs, re, id;
+    for(int i = 1; i < n; i <<= 1){
+        for(int index = 0; index+i<n; index += (i<<1)){
+            id = 0, ls = index, le = index+i-1, rs = le+1, re = min(le+i, n-1);
+            while(ls <= le && rs <= re){
+                if(arr[ls] <= arr[rs]) tmp[id++] = arr[ls++];
+                else {
+                    tmp[id++] = arr[rs++];
+                    cnt += (le-ls+1);
+                }
+            } while(ls <= le){  // enter this loop when rs = re+1
+                arr[--rs] = arr[le--];
+            } while(id > 0){  // end this loop when id == 0
+                arr[--rs] = tmp[--id];
+            }
+        }
+    } return cnt;
+}
+*/
 int main(){
 
     return 0;

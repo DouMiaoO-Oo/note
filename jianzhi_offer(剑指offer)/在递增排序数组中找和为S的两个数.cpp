@@ -11,7 +11,7 @@ C(n, 2)暴力枚举, 复杂度 O(n^2).
 
 方法2:
 step1: 先sort排序, 复杂度 O(nlogn).
-step2: 对于数组A中的前一半的x, 使用二分法找元素(Target-x), 复杂度O(nlogn).
+step2: 对于数组A中的前一半的x, 使用二分法找元素(Target-x), 复杂度O(logn).
 所以该方法整体的复杂度为 O(nlogn)
 
 方法3 :
