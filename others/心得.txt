@@ -1,0 +1,15 @@
+1. （1）如果写了两个公式，md导出pdf时会将两个公式合并为一行。所以需要加点东西分隔符号$。
+	$公式一$
+	$公式二$
+	可以添加 <font color="white">DouMiaoO_Oo</font>来换行，但是TeX不兼容。导出的时候**不** 可以换行。 
+	或者<br></br>来换行，pdf中效果好，但是md中看起来不好看。
+	\textcolor{white}{}， 这个TeX和typora都兼容，但是导出的时候不可以换行
+	
+	总结 只有 \\ 才能换行，换行写多个$$一定会合并
+	
+	（2）\quad \quad \quad \quad \qquad之前需要有非空格字符才有效果，可以添加\textcolor{white}{}
+
+	综上： \\ \textcolor{white}{\ \ } \quad \quad \quad \quad \qquad  写在每一行之后起到换行的作用，同时可以保证下一行公式前面有缩进。
+
+2. \left(  \right) 大的括号
+
