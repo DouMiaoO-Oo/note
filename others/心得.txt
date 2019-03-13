@@ -11,5 +11,34 @@
 
 	综上： \\ \textcolor{white}{\ \ } \quad \quad \quad \quad \qquad  写在每一行之后起到换行的作用，同时可以保证下一行公式前面有缩进。
 
-2. \left(  \right) 大的括号
+2. 相邻的 
+	$$公式一$$
+	$$公式二$$
+	之间应该有个换行
 
+总结一些语法
+\nabla 劈形算子，梯度记号
+\left(  \right) 大的括号
+\infty 无穷的符号
+\forall 全称量词
+\exist  存在量词
+\succ 正定矩阵的那个大于号，矩阵不等式？
+
+矩阵 x, y
+     z, w
+	 M = \begin{matrix} x&y\\ z&w \end{matrix}
+圆(小)括号的矩阵 x, y
+                 z, w
+	 M = \begin{pmatrix} x&y\\ z&w \end{pmatrix}
+方(中)括号的矩阵 x, y
+                 z, w
+	 M = \begin{bmatrix} x&y\\ z&w \end{bmatrix}
+花(大)括号的矩阵 x, y
+                 z, w
+	 M = \begin{Bmatrix} x&y\\ z&w \end{Bmatrix}
+两道竖线的矩阵 |x, y|
+               |z, w|
+    M = \begin{vmatrix} x&y\\ z&w \end{vmatrix}
+矩阵的范数     ||x, y||
+               ||z, w||
+    M = \begin{Vmatrix} x&y\\ z&w \end{Vmatrix}

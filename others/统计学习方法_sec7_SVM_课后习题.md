@@ -6,18 +6,22 @@ $$\min_{w,b,\xi}{\frac{1}{2}\|w\|^2}+C\sum^N_{i=1}\xi_i^2 \\ s.t.{\quad}y_i(w{\c
 
 **解答**：定义拉格朗日函数
 
-$$ L(w,b, \xi, \alpha, \mu) = \frac{1}{2}\|\,w \|^2  +C\sum_{i=1}^{N}\xi_i^{2} - \sum_{i=1}^{N}\alpha_i(y_i(w \cdot x_i +b) - 1+ \xi_i) - \sum_{i=1}^{N}\mu_i\xi_i​$$
-其中 $\alpha_i \ge 0, \mu_i \ge 0​$.
+$$ L(w,b, \xi, \alpha, \mu) = \frac{1}{2}\|\,w \|^2  +C\sum_{i=1}^{N}\xi_i^{2} - \sum_{i=1}^{N}\alpha_i(y_i(w \cdot x_i +b) - 1+ \xi_i) - \sum_{i=1}^{N}\mu_i\xi_i , \\$$ 其中 $\alpha_i \ge 0, \mu_i \ge 0$.
 
 求偏导:
-$$ \dfrac{\partial{L}}{\partial{w}} = w - \sum_{i=1}^{N}\alpha_iy_ix_i​$$ 
+
+$$ \dfrac{\partial{L}}{\partial{w}} = w - \sum_{i=1}^{N}\alpha_iy_ix_i$$ 
+
 $$ \dfrac{\partial{L}}{\partial{b}} = - \sum_{i=1}^{N}\alpha_iy_i​$$
-$$ \dfrac{\partial{L}}{\partial{\xi_i}} = 2C\xi_i - \alpha_i - \mu_i​$$  
+
+$$ \dfrac{\partial{L}}{\partial{\xi_i}} = 2C\xi_i - \alpha_i - \mu_i$$  
 
 令偏导为0，可以得到：
-$$ w = \sum_{i=1}^{N}\alpha_iy_ix_i​$$ 
-$$\sum_{i=1}^{N}\alpha_iy_i = 0​$$
-$$ \alpha_i + \mu_i = 2C\xi_i​$$
+$$ w = \sum_{i=1}^{N}\alpha_iy_ix_i$$ 
+
+$$\sum_{i=1}^{N}\alpha_iy_i = 0$$
+
+$$ \alpha_i + \mu_i = 2C\xi_i$$
 
 带回$L​$中可得：
 
