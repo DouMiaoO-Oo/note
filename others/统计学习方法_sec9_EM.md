@@ -50,3 +50,7 @@ $$ H(\Theta^{(i+1)}, \Theta^{(i)}) - H(\Theta^{(i)}, \Theta^{(i)})  \\= \sum_z  
 
 综上，可以得到$logP(Y|\Theta^{(i+1)}) - logP(Y|\Theta^{(i)}) \ge 0$
 
+## 参考资料
+
+- 《统计学习方法》
+
