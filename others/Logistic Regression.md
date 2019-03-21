@@ -106,26 +106,36 @@ $L(y, \hat{y}) = -ylog(\hat{y}) - (1-y)log(1-\hat{y})​$
 
 首先求解损失函数$L$的梯度：
 
-$\nabla L =  \left[ \dfrac{-y}{\hat {y}} + \dfrac{1- y}{1- \hat {y}} \right]\hat y(1-\hat y)(-\hat x) =(y- \hat y) \hat x  =(y- \hat y) \begin{bmatrix} 1 \\  x_1\\  x_2\\ ...\\  x_n \end{bmatrix} = \begin{bmatrix} \dfrac{\part L}{\part \Theta_0} \\ \dfrac{\part L}{\part \Theta_1}\\ \dfrac{\part L}{\part \Theta_2}\\ ...\\ \dfrac{\part L}{\part \Theta_n} \end{bmatrix}​$
+$\nabla L =  \left[ \dfrac{-y}{\hat {y}} + \dfrac{1- y}{1- \hat {y}} \right]\hat y(1-\hat y)(\hat x) =(\hat y-  y) \hat x  =(\hat y- y) \begin{bmatrix} 1 \\  x_1\\  x_2\\ ...\\  x_n \end{bmatrix} = \begin{bmatrix} \dfrac{\part L}{\part \Theta_0} \\ \dfrac{\part L}{\part \Theta_1}\\ \dfrac{\part L}{\part \Theta_2}\\ ...\\ \dfrac{\part L}{\part \Theta_n} \end{bmatrix}$
 
 再求解损失函数$L​$的Hessian Matrix：
 
- $\nabla^2 L  =\begin{bmatrix} \dfrac{\part^2 L}{\part  \Theta_0^2}& ... &\dfrac{\part^2 L}{\part \Theta_0 \part \Theta_n} \\ \dfrac{\part^2 L}{\part \Theta_1 \part \Theta_0}& ... &\dfrac{\part^2 L}{\part \Theta_1 \part \Theta_n} \\ \dfrac{\part^2 L}{\part \Theta_2\part  \Theta_0} & ... & \dfrac{\part^2 L}{\part \Theta_2\part \Theta_n}\\  ...&...&...\\ \dfrac{\part^2 L}{\part \Theta_n \part  \Theta_0} & ... &\dfrac{\part^2 L}{\part \Theta_n^2} \end{bmatrix}  = \hat y(y-\hat y)\begin{bmatrix} x_0x_0 & x_0x_1 & ... &x_0x_n \\  x_1x_0 & x_1x_1 & ... &x_1x_n \\  x_2x_0 & x_2x_1 & ...& x_2x_n \\ ...&...&...& ...\\  x_nx_0 & x_nx_1 & ... & x_nx_n  \end{bmatrix} = \hat y(y-\hat y)\hat x \hat{x}^T \in R^{(n+1)}​$
+ $\nabla^2 L  =\begin{bmatrix} \dfrac{\part^2 L}{\part  \Theta_0^2}& ... &\dfrac{\part^2 L}{\part \Theta_0 \part \Theta_n} \\ \dfrac{\part^2 L}{\part \Theta_1 \part \Theta_0}& ... &\dfrac{\part^2 L}{\part \Theta_1 \part \Theta_n} \\ \dfrac{\part^2 L}{\part \Theta_2\part  \Theta_0} & ... & \dfrac{\part^2 L}{\part \Theta_2\part \Theta_n}\\  ...&...&...\\ \dfrac{\part^2 L}{\part \Theta_n \part  \Theta_0} & ... &\dfrac{\part^2 L}{\part \Theta_n^2} \end{bmatrix}     = \hat y(1-\hat y)\begin{bmatrix} x_0x_0 & x_0x_1 & ... &x_0x_n \\  x_1x_0 & x_1x_1 & ... &x_1x_n \\  x_2x_0 & x_2x_1 & ...& x_2x_n \\ ...&...&...& ...\\  x_nx_0 & x_nx_1 & ... & x_nx_n  \end{bmatrix} = \hat y(1 -\hat y)\hat x \hat{x}^T \in R^{(n+1)}​$
 
-即$\nabla^2 L _{i,j} = \dfrac{\part^2 L}{\part  \Theta_i  \Theta_j}=\hat y(y-\hat y)x_ix_j$,  $where \ i,j = 0, ... ,n.$
+即$\nabla^2 L _{i,j} = \dfrac{\part^2 L}{\part  \Theta_i  \Theta_j}=\hat y(1-\hat y)x_ix_j$,  $where \ i,j = 0, ... ,n.$
 
-此时 $\forall v\in R^{(n+1)} , v \ne 0 $，
+此时 $\forall v\in R^{(n+1)} , v \ne 0 ​$，
 
-满足条件$$ v^T \{ \nabla^2 L\} v = \hat y(y-\hat y) v^T\hat x \hat x^Tv = \hat y(y-\hat y) \begin{vmatrix} \hat x^Tv\end{vmatrix}^2 \gt 0​$$
+满足条件$$ v^T \{ \nabla^2 L\} v = \hat y(1-\hat y) v^T\hat x \hat x^Tv = \hat y(1-\hat y) \begin{vmatrix} \hat x^Tv\end{vmatrix}^2 \gt 0$$
 
-所以我们证明了$\nabla^2 L \succ 0$，即$\nabla^2 L $是个正定矩阵，因此损失函数$L$是个凸函数。
-当我们考虑样本个数$m$时，上述证明凸性的推导过程也是类似的。或者我们可以简单的利用一种保凸运算，即凸函数的非负加权求和也是凸函数来证明。对于有$m$个样本时的损失函数为：
+所以我们证明了$\nabla^2 L \succ 0​$，即$\nabla^2 L ​$是个正定矩阵，因此损失函数$L​$是个凸函数。
+当我们考虑样本个数$m​$时，上述证明凸性的推导过程也是类似的。或者我们可以简单的利用一种保凸运算，即凸函数的非负加权求和也是凸函数来证明。对于有$m​$个样本时的损失函数为：
 
-$L(y, \hat{y}) = -\dfrac{1}{m}\sum _{i=1}^{m} \left[ y_ilog(\hat{y}_i) + (1-y_i)log(1-\hat{y}_i) \right]$
+$L(y, \hat{y}) = -\dfrac{1}{m}\sum _{i=1}^{m} \left[ y_ilog(\hat{y}_i) + (1-y_i)log(1-\hat{y}_i) \right]​$
 
 每个样本$(y_i, x_i)$的损失函数都是凸函数，我们对每个样本利用$\dfrac{1}{m}$来加权，此时得到的损失函数依然是凸函数。
 
 因为损失函数是凸函数，所以只要梯度为0的点就是全局最优值，此时可以通过随机梯度下降法来求解最优值。
+
+### 从训练模型的难度来看
+
+除了上面分析的凸性，还有另一个原因让我们选择了交叉熵作为损失函数。首先观察均方损失函数（MSE）和交叉熵对参数$\Theta$的一阶导数：
+
+$$\dfrac{\part(MSE)}{\part{\Theta} } = (\hat y- y )\hat{y}(1-\hat{y})x  ​$$
+
+$$\dfrac{\partial L}{\partial \Theta}= ( \hat y - y)\tilde{x} $$
+
+因为我们采用的是sigmoid函数，所以模型的预测值$\hat y \in [0, 1]$。此时可以发现对于MSE来说，当$\hat y$的值接近0或者1时，都会导致一阶导数值趋近于0，使得模型的训练非常缓慢。相对的，采用交叉熵损失函数时就不存在这个问题。
 
 ## 参考资料
 
@@ -135,7 +145,7 @@ $L(y, \hat{y}) = -\dfrac{1}{m}\sum _{i=1}^{m} \left[ y_ilog(\hat{y}_i) + (1-y_i)
 
 - 《Convex Optimization》附录 A.4.3 二阶导数
 
--  *[Regularized Logistic Regression is Strictly Convex](http://qwone.com/~jason/writing/convexLR.pdf)*, Jason D. M. Rennie
+- *[Regularized Logistic Regression is Strictly Convex](http://qwone.com/~jason/writing/convexLR.pdf)*, Jason D. M. Rennie
 
    这里的误差函数不太理解；参考证明凸函数的过程。
 
@@ -143,4 +153,6 @@ $L(y, \hat{y}) = -\dfrac{1}{m}\sum _{i=1}^{m} \left[ y_ilog(\hat{y}_i) + (1-y_i)
 
 - the equivalence of logistic regression and maximum entropy models 最大熵与逻辑回归的等价性[参考博客](https://blog.csdn.net/buring_/article/details/43342341)
 
-  
+- 《百面机器学习》 神经网络输出层是sigmoid或者softmax时不要使用均方误差
+
+   
