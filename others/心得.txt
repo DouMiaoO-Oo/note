@@ -44,6 +44,8 @@
                ||z, w||
     M = \begin{Vmatrix} x&y\\ z&w \end{Vmatrix}
 
+多行大括号
+	dp[i][j] =  \left\{  \begin{array}{lr} dp[i-1][j]+1, & 插入 \\  dp[i][j-1] +1, & 删除 \\   dp[i-1][j-1] + (str1[i-1] != str2[j-1])  & 替换 \end{array}  \right. 
 	
 学习心得：
 	交叉熵其实是从对数似然函数那里得到的？
