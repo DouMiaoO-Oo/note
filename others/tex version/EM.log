@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.3.5)  13 MAR 2019 08:31
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.3.5)  28 MAR 2019 15:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"./sec9_EM .tex"
-(./sec9_EM .tex
+**./EM.tex
+(./EM.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (c:/texlive/2017/texmf-dist/tex/latex/ctex/ctexart.cls
@@ -1357,8 +1357,8 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen192
 \Gm@layoutvoffset=\dimen193
 \Gm@dimlist=\toks25
-) (./sec9_EM .aux)
-\openout1 = `"sec9_EM .aux"'.
+) (./EM.aux)
+\openout1 = `EM.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
 LaTeX Font Info:    ... okay on input line 10.
@@ -1487,6 +1487,16 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 11.
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no （ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no 应 in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no 用 in font [lmroman10-regular]:mapping=tex-text;!
@@ -1524,16 +1534,96 @@ Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
  [1
 
-] (./sec9_EM .aux) ) 
-Here is how much of TeX's memory you used:
- 22443 strings out of 493007
- 463477 string characters out of 6137966
- 500602 words of memory out of 5000000
- 26222 multiletter control sequences out of 15000+600000
- 538038 words of font info for 75 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 57i,6n,68p,10446b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+]
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
 
-Output written on sec9_EM .pdf (1 page).
+Overfull \hbox (229.52211pt too wide) detected at line 51
+\OML/cmm/m/it/10.53937 Q\OT1/cmr/m/n/10.53937 (^^B\OML/cmm/m/it/10.53937 ; \OT1
+/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53937 ^^@ \OML/cmm/m/it/10.53937 H\OT
+1/cmr/m/n/10.53937 (^^B\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[]) = 
+[] \OML/cmm/m/it/10.53937 P\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Z\OMS/
+cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/m/n/10.53937 ^^B[]) [] []
+ [][]      = \OML/cmm/m/it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10
+.53937 Y\OMS/cmsy/m/n/10.53937 j\OT1/cmr/m/n/10.53937 ^^B) [] \OML/cmm/m/it/10.
+53937 P\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Z\OMS/cmsy/m/n/10.53937 j\
+OML/cmm/m/it/10.53937 Y; \OT1/cmr/m/n/10.53937 ^^B[])[] [][]      = \OML/cmm/m/
+it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Y\OMS/cmsy/m/n/10
+.53937 j\OT1/cmr/m/n/10.53937 ^^B)[]
+ []
+
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+
+Overfull \hbox (211.25209pt too wide) detected at line 55
+\OML/cmm/m/it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Y\OMS/
+cmsy/m/n/10.53937 j\OT1/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53937 ^^@ \OML
+/cmm/m/it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Y\OMS/cmsy
+/m/n/10.53937 j\OT1/cmr/m/n/10.53937 ^^B[])[]  = [\OML/cmm/m/it/10.53937 Q\OT1/
+cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[]) \O
+MS/cmsy/m/n/10.53937 ^^@ \OML/cmm/m/it/10.53937 H\OT1/cmr/m/n/10.53937 (^^B[]\O
+ML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[])] \OMS/cmsy/m/n/10.53937 ^^@
+ \OT1/cmr/m/n/10.53937 [\OML/cmm/m/it/10.53937 Q\OT1/cmr/m/n/10.53937 (^^B[]\OM
+L/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53937 ^^@ \
+OML/cmm/m/it/10.53937 H\OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53937 ; \OT
+1/cmr/m/n/10.53937 ^^B[])][]  = [\OML/cmm/m/it/10.53937 Q\OT1/cmr/m/n/10.53937 
+(^^B[]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53
+937 ^^@ \OML/cmm/m/it/10.53937 Q\OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53
+937 ; \OT1/cmr/m/n/10.53937 ^^B[])] \OMS/cmsy/m/n/10.53937 ^^@ \OT1/cmr/m/n/10.
+53937 [\OML/cmm/m/it/10.53937 H\OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.539
+37 ; \OT1/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53937 ^^@ \OML/cmm/m/it/10.5
+3937 H\OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.5393
+7 ^^B[])][]
+ []
+
+Missing character: There is no ​ in font [lmroman10-regular]:mapping=tex-text;!
+
+Overfull \hbox (454.64973pt too wide) detected at line 59
+\OML/cmm/m/it/10.53937 H\OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53937 ; \O
+T1/cmr/m/n/10.53937 ^^B[]) \OMS/cmsy/m/n/10.53937 ^^@ \OML/cmm/m/it/10.53937 H\
+OT1/cmr/m/n/10.53937 (^^B[]\OML/cmm/m/it/10.53937 ; \OT1/cmr/m/n/10.53937 ^^B[]
+)[]  = [] \OML/cmm/m/it/10.53937 P\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937
+ Z\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/m/n/10.53937 ^^B[]
+)[\OML/cmm/m/it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Z\OM
+S/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/m/n/10.53937 ^^B[]) \OM
+S/cmsy/m/n/10.53937 ^^@ \OML/cmm/m/it/10.53937 logP\OT1/cmr/m/n/10.53937 (\OML/
+cmm/m/it/10.53937 Z\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/m
+/n/10.53937 ^^B[])][]  = [] \OML/cmm/m/it/10.53937 P\OT1/cmr/m/n/10.53937 (\OML
+/cmm/m/it/10.53937 Z\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/
+m/n/10.53937 ^^B[])\OML/cmm/m/it/10.53937 log[][]  \OMS/cmsy/m/n/10.53937 ^^T \
+OML/cmm/m/it/10.53937 log\OT1/cmr/m/n/10.53937 ([] \OML/cmm/m/it/10.53937 P\OT1
+/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 Z\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/i
+t/10.53937 Y; \OT1/cmr/m/n/10.53937 ^^B[])[])[][][]  = \OML/cmm/m/it/10.53937 l
+og\OT1/cmr/m/n/10.53937 ([] \OML/cmm/m/it/10.53937 P\OT1/cmr/m/n/10.53937 (\OML
+/cmm/m/it/10.53937 Z\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 Y; \OT1/cmr/
+m/n/10.53937 ^^B[]))[]  = 0[]
+ []
+
+[2] (./EM.aux) ) 
+Here is how much of TeX's memory you used:
+ 22475 strings out of 493007
+ 465480 string characters out of 6137966
+ 501588 words of memory out of 5000000
+ 26253 multiletter control sequences out of 15000+600000
+ 538046 words of font info for 76 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 57i,6n,68p,10438b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on EM.pdf (2 pages).
