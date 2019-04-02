@@ -1,5 +1,7 @@
 # 逻辑回归 (Logistic Regression)
 
+作者：豆苗 日期：2019.3.20
+
 ## sigmoid函数的来历是什么？
 
 ### 从几率 (odds) 上理解
