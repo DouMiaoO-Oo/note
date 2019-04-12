@@ -64,8 +64,8 @@ public:
         if(l < r){
             int pivot = part(arr, l, r);
             if(pivot == k-1) return;
-            helper(arr, l, pivot-1, k);
-            helper(arr, pivot+1, r, k);
+            if(pivot < k-1) helper(arr, pivot+1, r, k);
+            else helper(arr, l, pivot-1, k);
         } return;
     }
     vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
