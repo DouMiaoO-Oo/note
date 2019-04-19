@@ -4,34 +4,43 @@
 
 这个小节也可以称为（一元）最小二乘法的**代数解法**。
 
-希望拟合出的函数: $ \hat{y} = ax+b ​$, 其中$a, b​$为学习的一元函数的参数.<br></br>
-误差函数: $ J = \frac{1}{2} \sum_{i=1}^{n}(y_i -\hat{y_i})\ = \frac{1}{2} \sum_{i=1}^{n}(y_i - ax_i -b)^2​$，其中$n​$是样本的个数.
+希望拟合出的函数: $ \hat{y} = ax+b $, 其中$a, b$为学习的一元函数的参数.
 
-对误差函数求导: <br></br>
+误差函数: $ J = \frac{1}{2} \sum_{i=1}^{n}(y_i -\hat{y_i})\ = \frac{1}{2} \sum_{i=1}^{n}(y_i - ax_i -b)^2$，其中$n$是样本的个数.
+
+对误差函数求导: 
+
 $$ \frac{\partial{J}}{\partial{a}} = -\sum_{i=1}^{n}(y_i - ax_i -b)x_i$$
 
-$$ \frac{\partial{J}}{\partial{b}} = -\sum_{i=1}^{n}(y_i - ax_i -b)$$ 
+$$ \frac{\partial{J}}{\partial{b}} = -\sum_{i=1}^{n}(y_i - ax_i -b)​$$ 
 
-令误差函数为0: <br></br>
+令误差函数为0: 
+
 $$ \frac{\partial{J}}{\partial{a}}=0 \Rightarrow a\sum_{i=1}^{n}x_{i}^{2} + b\sum_{i=1}^{n}x_i = \sum_{i=1}^{n}x_iy_i $$
 
 $$ \frac{\partial{J}}{\partial{b}}=0 \Rightarrow a\sum_{i=1}^{n}x_{i} + bn = \sum_{i=1}^{n}y_i $$
 
-为了方便计算我们记 $A = \sum_{i=1}^{n}x_{i}^{2}$, $B = \sum_{i=1}^{n}x_{i}$, $C= \sum_{i=1}^{n}x_iy_i $, $D =  \sum_{i=1}^{n}y_i $. <br></br>
-可以把上式简化为： <br></br>
-$$ aA+bB = C, $$ (1) <br></br>
-$$ aB+bn = D$$, (2)
+为了方便计算我们记 $A = \sum_{i=1}^{n}x_{i}^{2}$, $B = \sum_{i=1}^{n}x_{i}$, $C= \sum_{i=1}^{n}x_iy_i $, $D =  \sum_{i=1}^{n}y_i ​$. 
 
-化简(2)得 $b = \frac{D-aB}{n}$ , 带入(1) 得到 $anA+(D-aB)B = nC $,  <br></br>
-$ \Rightarrow a = \dfrac{nC-BD}{nA-B^2}$, <br></br>
-$ \Rightarrow  b = \dfrac{D(nA-B^2)-(nC-BD)B}{n(nA-B^2)} = \dfrac{AD-BC}{nA-B^2}$
+可以把上式简化为：
+
+$$ aA+bB = C, $$ (1) 
+
+$$ aB+bn = D​$$, (2)
+
+化简(2)得 $b = \frac{D-aB}{n}$ , 带入(1) 得到 $anA+(D-aB)B = nC ​$,  
+
+$ \Rightarrow a = \dfrac{nC-BD}{nA-B^2}​$, 
+
+$ \Rightarrow  b = \dfrac{D(nA-B^2)-(nC-BD)B}{n(nA-B^2)} = \dfrac{AD-BC}{nA-B^2}​$
 
 综上：
 $$ a = \dfrac{n\sum_{i=1}^{n}x_iy_i - \sum_{i=1}^{n}x_{i} \sum_{i=1}^{n}y_i }{n\sum_{i=1}^{n}x_{i}^2 - (\sum_{i=1}^{n}x_{i})^2}$$
 
 $$ b = \dfrac{\sum_{i=1}^{n}x_{i}^2 \sum_{i=1}^{n}y_{i} - \sum_{i=1}^{n}x_{i} \sum_{i=1}^{n}x_{i}y_{i}}{n\sum_{i=1}^{n}x_{i}^2 - (\sum_{i=1}^{n}x_{i})^2}$$
 
-**注：**一般情况下，最小二乘法使用的公式为：<br></br>
+**注：**一般情况下，最小二乘法使用的公式为：
+
 $$ a = \dfrac{\sum_{i=1}^{n}(X_i- \bar{X})(Y_i- \bar{Y})}{\sum_{i=1}^{n}(X_i - \bar{X})^2}$$, $$ b = \bar{Y} - a\bar{X}$$
 
 上式使用 $\bar{X} = \sum_{i=1}^{n}X_i​$ 以及 $\bar{Y} = \sum_{i=1}^{n}Y_i​$很容易验证正确性。

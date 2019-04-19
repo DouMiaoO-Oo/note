@@ -1,3 +1,5 @@
+[TOC]
+
 # 逻辑回归 (Logistic Regression)
 
 作者：豆苗 日期：2019.3.20
@@ -77,7 +79,7 @@ $$ \sigma '(x) = \dfrac{e^{ -x}}{ (1+e^{ -x})^2 } \\ =  \dfrac{1}{1+e^{-x}} \tim
 
 逻辑回归的模型 (model) 可以表示为：$\hat{y} = \sigma(\Theta^Tx+b) = \dfrac{1}{1+e^{-(\Theta^{T}x+b)}}$，代表预测样本$x$的标签为1的概率；1-$ \hat{y} $代表了预测样本的标签为0的概率。
 
-### 
+
 
 ## 损失函数 (Loss Function)
 
