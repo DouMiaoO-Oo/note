@@ -1,7 +1,7 @@
 % 2019.3.18 刘宇威
 % OCTAVE代码，数组下标从1开始。
 % 这份KD-tree的实现是用连续的数组结构实现的，应该用指针？ 他的数据点没有排序，只是在排序下标。
-
+% 参考链接：https://sine-x.com/statistical-learning-method/#%E7%AC%AC3%E7%AB%A0-k%E9%82%BB%E8%BF%91%E7%AE%97%E6%B3%95
 count = 100;
 dimen = 100;
 test = 100;
