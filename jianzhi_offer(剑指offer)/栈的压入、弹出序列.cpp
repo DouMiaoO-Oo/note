@@ -19,9 +19,8 @@ public:
                 if(id == pushV.size()) return false;
                 s.push(pushV[id++]);
             }
-            if(s.top() == popV[i]){
+            //if(s.top() == popV[i])
                 s.pop();
-            } else return false;
         } return true;
     }
 };

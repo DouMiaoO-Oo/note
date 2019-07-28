@@ -38,6 +38,38 @@ private:
             && partial_identity(r1->right, r2->right);
     }
 };
+/*
+// 手生了以后做的
+class Solution {
+public:
+    bool check(TreeNode* r1, TreeNode* r2){
+        if(r2 == NULL) return true;
+        if(r1 == NULL) return false;
+        if(r1->val != r2->val) return false;
+        return check(r1->left, r2->left) && check(r1->right, r2->right);
+    }
+    void helper(TreeNode* r1, TreeNode* r2){
+        if(r1 == NULL || res) return;
+        if(check(r1, r2)){
+            res = true;
+            return;
+        }
+        helper(r1->left, r2);
+        if(!res)
+            helper(r1->right, r2);
+    }
+    bool HasSubtree(TreeNode* pRoot1, TreeNode* pRoot2)
+    {
+        if(pRoot2 == NULL) return false;
+        res = false;
+        helper(pRoot1, pRoot2);
+        return res;
+        
+    }
+private:
+    bool res;
+};
+*/
 int main(){
 
     return 0;

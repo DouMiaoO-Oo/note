@@ -17,21 +17,11 @@ using namespace std;
 */
 class Solution {
 public:
-    void helper(vector<int>& res, ListNode* h){
-        if(h == NULL) return;
-        helper(res, h->next);
-        res.push_back(h->val);
-    }
     vector<int> printListFromTailToHead(ListNode* head) {
-        vector<int> res;
-        helper(res, head);
-        return res;
-    }
-};
-vector<int> printListFromTailToHead(ListNode* head) {
         vector<int> res;
         if(head == NULL) return res;
         ListNode *p1=head, *p2=p1->next, *p3;
+		// p1->next = NULL; // 容易遗漏的这句写在这里也可以
         while(p2 != NULL){
             p3 = p2->next;
             p2->next = p1;
@@ -43,7 +33,40 @@ vector<int> printListFromTailToHead(ListNode* head) {
             p1 = p1->next;
         } return res;
     }
+};
+
 int main(){
 
     return 0;
 }
+
+/*
+# 方法一：直接用stack
+vector<int> printListFromTailToHead(ListNode* head) {
+        vector<int> res;
+        if(head == NULL) return res;
+        stack<ListNode*> s;
+        while(head != NULL){
+            s.push(head);
+            head = head->next;
+        }
+        while(!s.empty()){
+            res.push_back(s.top()->val);
+            s.pop();
+        } return res;
+    }
+# 方法二：利用递归
+class Solution {
+public:
+    void helper(vector<int>& res, ListNode* h){
+        if(h == NULL) return;
+        helper(res, h->next);
+        res.push_back(h->val);
+    }
+    vector<int> printListFromTailToHead(ListNode* head) {
+        vector<int> res;
+        helper(res, head);
+        return res;
+    }
+};
+*/

@@ -17,14 +17,15 @@ struct ListNode {
 class Solution {
 public:
     ListNode* ReverseList(ListNode* pHead) {
-        if(pHead == NULL || pHead->next == NULL) return pHead;
+        if(pHead == NULL) return NULL;
         ListNode *p1 = pHead, *p2 = p1->next, *p3;
-        while(p2 != NULL){
+        p1->next = NULL; // 容易遗漏
+		while(p2 != NULL){
             p3 = p2->next;
             p2->next = p1;
             p1 = p2;
             p2 = p3;
-        } pHead->next = NULL; // 容易遗漏
+        }
         return p1;
     }
 };

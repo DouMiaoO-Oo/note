@@ -30,7 +30,14 @@ using namespace std;
 |××|
 --------------------------
 */
-int main(){
-
-    return 0;
+int rectCover(int number) {
+	// 就是斐波那契数列
+    if(number < 1) return 0;
+    if(number <= 2) return number;
+    int last = 1, cur = 2, tmp;
+    for(int i = 3; i <= number; ++i){
+        tmp = cur;
+        cur += last;
+        last = tmp;
+    } return cur;
 }

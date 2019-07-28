@@ -39,6 +39,24 @@ public:
         Mirror(r->right);
     }
 };
+/*
+// 傻逼做法
+class Solution {
+public:
+    void helper(TreeNode*& l, TreeNode*& r){
+        swap(l, r);
+        if(l != NULL)
+            helper(l->left, l->right);
+        if(r != NULL)
+            helper(r->left, r->right);
+    }
+    void Mirror(TreeNode *pRoot) {
+        if(pRoot == NULL) return;
+        helper(pRoot->left, pRoot->right);
+        return;
+    }
+};
+*/
 int main(){
 
     return 0;

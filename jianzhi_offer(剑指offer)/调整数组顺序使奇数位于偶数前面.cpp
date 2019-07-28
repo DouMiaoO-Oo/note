@@ -10,7 +10,7 @@ class Solution {
 public:
     void reOrderArray(vector<int> &array){
         /* 方法一：冒泡排序 每次将一个偶数放置到最终的位置
-            复杂度O(n^2)
+            时间复杂度O(n^2)
         */
         if(array.size() <= 1) return;
         for(int i = 0; i < array.size()-1; ++i){

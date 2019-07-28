@@ -58,7 +58,7 @@ public:
         for(int i = 0; i < men.size(); ++i){
           int best = bisec(men[i], e);
           arr.push_back(best);
-        } return *max_element(arr.begin(), arr.end());;
+        } return *max_element(arr.begin(), arr.end());
     }
 private:
 
