@@ -54,7 +54,7 @@ class Solution {
 public:
     int part(vector<int>& a, int l, int r){
         int p = l; // pivot position
-        for(int i = l+1; i <= r; ++i){
+        for(int i = l+1; i <= r; ++i){  // 注意i要初始化为l+1
             if(a[l] >= a[i])
                 swap(a[++p], a[i]);
         } swap(a[l], a[p]);
