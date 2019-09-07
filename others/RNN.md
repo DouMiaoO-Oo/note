@@ -1,6 +1,6 @@
 
 
-![img](D:\PycharmProjects\doc\RNN-cell.png) 
+![img](./RNN/RNN-cell.png) 
 
 注：下文中的$$g(\cdot)$$ 代表某种激活函数，可以是$$sigmoid, tanh, relu$$等等。
 

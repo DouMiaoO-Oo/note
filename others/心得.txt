@@ -24,7 +24,7 @@
 \exist  存在量词
 \succ 正定矩阵的那个大于号，矩阵不等式？
 \succeq 半正定矩阵的大于等于号
-
+\left\vert \right\vert  模长 
 矩阵 x, y
      z, w
 	 M = \begin{matrix} x&y\\ z&w \end{matrix}
