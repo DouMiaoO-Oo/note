@@ -53,7 +53,17 @@ $$ a = \dfrac{\sum_{i=1}^{n}(X_i- \bar{X})(Y_i- \bar{Y})}{\sum_{i=1}^{n}(X_i - \
 
 这个小节可以称为最小二乘法的**矩阵解法**。
 
-对于给定$A, b$， 希望找到某个$x$使得$Ax = \hat{b}$对于误差$J = \frac{1}{2} (b -\hat{b})^2$最小 ，此问题可以通过求解$ A^TAx = A^Tb$来找到最优$x = (A^TA)^{-1}A^TB$。这个公式有一个很简单的几何解释：优化的目标$J$，就是$b$到$A$张成的平面$Ax $的距离。更多详细的解释请见Linear algebra and its applications, 3rd edition (ISBN: 9787121113956) 中的Sec. 6.5
+我们使用矩阵$A$来表示样本的特征，其中每一行代表一个样本。
+
+对于给定$A, b$， 希望找到某个$x$使得$Ax = \hat{b}$对于误差$J = \frac{1}{2} (b -\hat{b})^2$最小 ，此问题可以通过求解$ A^TAx = A^Tb$来找到最优$x = (A^TA)^{-1}A^TB$。这个公式的理解方法：
+
+①简单的几何解释：优化的目标$J$，就是$b$到$A$张成的平面$Ax $的距离。更多详细的解释请见Linear algebra and its applications, 3rd edition (ISBN: 9787121113956) 中的Sec. 6.5
+
+②或者我们$\dfrac{\part J}{\part x}=0 \rightarrow \dfrac{\part (\frac{1}{2}x^TA^TAx-x^TA^Tb+\frac{1}{2}b^2)}{\part x}=0$
+
+参考周志华《机器学习》（西瓜书）Sec3.2.
+
+
 
 # 垂直距离or垂向距离
 
