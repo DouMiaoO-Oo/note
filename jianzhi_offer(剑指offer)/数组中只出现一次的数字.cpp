@@ -17,6 +17,8 @@ e.g., data={2, 2, 7, 7, 3, 6}, t=3^6=2'011^2'110 = 2'101
 我们取最右边的一位，根据这一位取0或者1将data中的数字分类:
 {2, 2, 6}, {7, 7, 3}. 将这两组分别进行异或操作就可以得到答案： 2^2^6=6, 7^7^3=3
 */
+
+/*2019.2.17*/
 class Solution {
 public:
     void FindNumsAppearOnce(vector<int> data, int* num1, int *num2) {
@@ -29,6 +31,31 @@ public:
             if(data[i]&id) *num1 ^= data[i];
              else *num2 ^= data[i];
         }
+    }
+};
+/*2020.5.6*/
+class Solution {
+public:
+    void FindNumsAppearOnce(vector<int> data, int* num1, int *num2) {
+        if(data.empty()) {
+            num1 = NULL;
+            num2 = NULL;
+            return;
+        } int flag = data[0], n = data.size();
+        for(int i = 1; i < n; ++i)
+            flag ^= data[i];
+        int pos = 0;  // 这里的实现对比2019.2.17版本的
+        while(!(flag & (1<<pos))){
+            ++pos;
+        }
+        *num1 = 0, *num2 = 0;
+        for(int i = 0; i < n; ++i){
+            if(data[i]&(1<<pos)){
+                *num1 ^= data[i];
+            } else{
+                *num2 ^= data[i];
+            }
+        } return;
     }
 };
 int main(){

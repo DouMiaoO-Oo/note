@@ -135,6 +135,41 @@ private:
 
 };
 */
+
+
+// 2020.5.11 上述问题想起来了，没有再错，并且换了一个处理办法
+class Solution {
+public:
+    bool dfs(char* mat, char* str, int pos){
+        if(*(mat+pos) != *str) return false;
+        if(*(str+1) == '\0') return true;
+        visited[pos] = true;
+        for(int i = 0; i < 4; ++i){
+            int npos = pos + shift[i];
+            if(npos < 0 || npos >= len || visited[npos]) continue;
+            if(dfs(mat, str+1, npos))
+                return true;
+        } visited[pos] = false;
+        return false;
+    }
+    bool hasPath(char* mat, int r, int c, char* str){
+        if(mat == NULL || *mat == '\0' || str == NULL || *str == '\0')
+            return false;
+        this->visited = vector<bool>(r*c, false);
+        this->shift = vector<int>({1, -1, c, -c});  // 这个初始化也更合理
+        this->len = r*c;
+        int pos = 0;
+        for(char* i = mat; *i != '\0'; ++i){
+            if(dfs(mat, str, pos)){
+                return true;
+            } ++pos;
+        } return false;
+    }
+private:
+    vector<bool> visited;
+    vector<int> shift;
+    int len;
+};
 int main(){
 
     return 0;

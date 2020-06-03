@@ -9,6 +9,8 @@
 3. 除0之外，没有重复数字
 */
 using namespace std;
+
+// 2019.2.18
 class Solution {
 public:
     bool IsContinuous( vector<int> numbers ) {
@@ -32,6 +34,23 @@ public:
         }  return true;//vacant_cnt == zero_cnt;
     }
 };
+
+// 2020.5.7
+bool IsContinuous(vector<int> arr) {
+        if(arr.size()<5) return false;
+        sort(arr.begin(), arr.end());
+        int cnt = 0;
+        for(int i = 0; i < arr.size(); ++i){
+            if(arr[i] == 0)
+                ++cnt;
+            if(i > 0 && arr[i] != 0 && arr[i-1] == arr[i])
+                return false;
+        }
+        int diff = arr[4]-arr[cnt];
+        if(diff > 4) return false;
+        return true;
+    }
+	
 int main(){
 
     return 0;

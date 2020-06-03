@@ -17,7 +17,7 @@ struct RandomListNode {
     }
 };
 
-
+/*2019.2.17*/
 class Solution {
 public:
     RandomListNode* Clone(RandomListNode* head){
@@ -50,7 +50,38 @@ public:
     }
 };
 
-
+/*2020.05.04*/
+class Solution {
+public:
+    RandomListNode* Clone(RandomListNode* pHead){
+        if(pHead == NULL) return pHead;
+        RandomListNode *p = pHead, *tmp;
+        while(p != NULL){
+            tmp = p->next;
+            p->next = new RandomListNode(p->label);
+            p->next->next = tmp;
+            p = tmp;
+        }
+        p = pHead;
+        while(p != NULL){
+            if(p->random != NULL)  // 容易遗漏
+                tmp = p->random->next;
+            else tmp = NULL;
+            p->next->random = tmp;
+            p = p->next->next;
+        }
+        p = pHead;
+        RandomListNode dummy(-1), *pp = &dummy;
+        while(p != NULL){  // 这里比2019.2.17写的好
+            tmp = p->next->next;
+            pp->next = p->next;
+            pp = pp->next;
+            p->next = tmp;
+            p = tmp;
+        } return dummy.next;
+        
+    }
+};
 int main(){
 
     return 0;

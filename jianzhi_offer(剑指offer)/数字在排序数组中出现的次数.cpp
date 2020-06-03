@@ -7,6 +7,7 @@
 #include <sstream>
 using namespace std;
 
+/* 2019.3.27 */
 class Solution {
 public:
     int GetNumberOfK(vector<int> data, int k) {
@@ -32,6 +33,33 @@ private:
             if(arr[m] <= target) l = m+1; // arr[j] <= target for j<l
             else r = m-1;
         } return r;
+    }
+};
+/* 2020.5.6 */
+class Solution {
+public:
+    int GetNumberOfK(vector<int> data, int k) {
+        if(data.empty()) return 0;
+        int l = 0, r = data.size()-1, m;
+        while(l < r){
+            m = l + (r-l)/2;
+            if(data[m] < k){
+                l = m+1;
+            } else{
+                r = m;
+            }
+        }
+        int left = l;  // data[left] >= k
+        if(data[left] != k) return 0;
+        r = data.size();  // [0, n)
+        while(l < r){
+            m = l + (r-l)/2;
+            if(data[m] <= k){
+                l = m+1;
+            } else{
+                r = m;
+            }  // data[r] > k, data[r-1]可能等于k
+        } return r-left;
     }
 };
 int main(){

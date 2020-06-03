@@ -21,7 +21,7 @@ public:
     double Power(double base, int exp) {
         int flag=0;
         double res = 1;
-		if(exp == 0) return 1;
+		if(exp == 0) return 1;  // 注释掉也是正确的
 		if(fabs(base) < 1e-6) return 0;
         if(exp < 0){
             flag = 1;

@@ -42,6 +42,31 @@ string ReverseSentence(string str) {
         my_reverse(str, 0, str.size()-1);
         return str;
     }
+	
+/*2020.5.7*/
+class Solution {
+public:
+    void rev(string& str, int s, int e){
+        while(s < e){
+            swap(str[s++], str[e--]);
+        }
+    }
+    string ReverseSentence(string str) {
+        if(str.empty()) return str;
+        str += ' ';
+        int id = 0, n = str.size(), s = 0;
+        while(id < n){
+            while(str[id+1] != ' ')
+                ++id;
+            rev(str, s, id);
+            id += 2;
+            s = id;
+        }
+        str = str.substr(0, str.size()-1);
+        rev(str, 0, str.size()-1);
+        return str;
+    }
+};
 int main(){
 	cout << Solution().ReverseSentence("student. a am I") << endl;
     return 0;

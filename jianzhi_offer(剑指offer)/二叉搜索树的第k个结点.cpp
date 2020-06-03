@@ -53,6 +53,31 @@ private:
     int cnt;
 };
 */
+
+/*2020.5.9*/
+class Solution {
+public:
+    void helper(TreeNode* p){
+        if(res) return;
+        if(p->left) helper(p->left);
+        if(--k == 0){
+            res = p;
+            return;
+        }
+        if(p->right) helper(p->right);
+    }
+    TreeNode* KthNode(TreeNode* pRoot, int k)
+    {
+        if(!pRoot || k<=0) return NULL;
+        this->k = k;
+        helper(pRoot);
+        return res;
+    }
+
+private:
+    int k;
+        TreeNode* res = NULL;
+};
 int main(){
 
     return 0;

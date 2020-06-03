@@ -71,7 +71,7 @@ public:
     vector<int> GetLeastNumbers_Solution(vector<int> input, int k) {
         if(k <= 0 || input.size() < k) return vector<int>();
         helper(input, 0, input.size()-1, k);
-        return vector<int>(&input[0], &input[k]);
+        return vector<int>(&input[0], &input[k]);  // vector<int>(input.begin(), input.begin()+k)
     }
 };
 */

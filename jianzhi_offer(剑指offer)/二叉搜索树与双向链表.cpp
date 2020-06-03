@@ -18,6 +18,7 @@ struct TreeNode {
 /*
 补充题目的要求，返回指向最小节点的指针。
 */
+// 2018.10.3
 class Solution {
 public:
     TreeNode* Convert(TreeNode* pRootOfTree){
@@ -35,6 +36,28 @@ public:
         if(pre != NULL) pre->right = cur;
         pre = cur;
         helper(cur->right, pre);
+    }
+};
+
+/*2020.5.7*/
+class Solution {
+public:
+    void helper(TreeNode* p, TreeNode*& pre){
+        if(p == NULL) return;
+        helper(p->left, pre);
+        p->left = pre;
+        pre->right = p;
+        pre = p;
+        helper(p->right, pre);
+    }
+    TreeNode* Convert(TreeNode* p)
+    {
+        if(p == NULL) return NULL;
+        TreeNode dummy(-1), *pre = &dummy;  // 构造一个dummy
+        helper(p, pre);
+        TreeNode* res = dummy.right;
+        res->left = NULL;
+        return res;
     }
 };
 int main(){

@@ -77,6 +77,27 @@ public:
     }
 };
 */
+
+/*2020.5.9 */
+class Solution {
+public:
+    ListNode* deleteDuplication(ListNode* p){
+        if(p == NULL || p->next == NULL) return p;
+        ListNode dummy(-1), *p1 = &dummy, *p2 = p;
+        while(p2){
+            if(p2->next == NULL || p2->next->val != p2->val){
+                p1->next = p2;
+                p1 = p2;
+                p2 = p2->next;
+            } else{
+                while(p2->next && p2->val == p2->next->val){
+                    p2 = p2->next;
+                } p2 = p2->next;
+                p1->next = NULL;  // 这里就是为了断开，考虑样例{1, 2, 3, 3, 4, 4, 4, 5}
+            }
+        } return dummy.next;
+    }
+};
 int main(){
 
     return 0;
