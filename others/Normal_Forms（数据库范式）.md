@@ -28,7 +28,7 @@ BCNF = no FD anomalies, but may lose some FDs.
 - X is a superkey, or
 - A is part of some key for R.
 
-违反3BF的情况有两种：
+违反3NF的情况有两种：
 
 - X is a proper subset of some key K. Such dependency is called a **partial dependency**. 举例来说，对于具有属性{A, B, C, D}的关系R, key: AB, FD: A→C。可以发现A是AB的真子集，此时称为**部分依赖**。
 
