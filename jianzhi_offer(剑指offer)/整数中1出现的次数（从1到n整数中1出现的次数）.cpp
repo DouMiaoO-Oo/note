@@ -25,7 +25,7 @@ int count_k(int n, int k){
 class Solution {
 public:
     int cntNumberK(int n, int k, int d){
-        // int t = pow(10, d-1);  // 1000.. // »á¶ªÊ§¾«¶È https://ideone.com/GjAbJq
+        // int t = pow(10, d-1);  // 1000.. // ä¼šä¸¢å¤±ç²¾åº¦ https://ideone.com/GjAbJq
         int t = pow(static_cast<float>(10), static_cast<float>(d-1));  // 1000..
         cout << "t: " << t << endl;
         int msd = n/t;  // most significant digit
